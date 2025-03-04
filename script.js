@@ -8,8 +8,7 @@ function showLogin() {
 
 function showPosts(id) {
   let str = "";
-  //console.log(`https://jsonplaceholder.typicode.com/posts/userId=${id}`)
-  fetch(`https://jsonplaceholder.typicode.com/posts/?userId=${id}`)
+   fetch(`https://jsonplaceholder.typicode.com/posts/?userId=${id}`)
     .then((res) => res.json())
     .then((data) => {
       data &&
@@ -24,8 +23,8 @@ function showPosts(id) {
     .catch((err) => console.log(err));
 }
 
-function showAlbum(id){
-content.innerHTML="Hello World"
+function showAlbum(id) {
+  content.innerHTML = "Hello World";
 }
 
 function showProfile(id) {
