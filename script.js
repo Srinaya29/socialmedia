@@ -24,6 +24,10 @@ function showPosts(id) {
     .catch((err) => console.log(err));
 }
 
+function showAlbum(id){
+content.innerHTML="Hello World"
+}
+
 function showProfile(id) {
   fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
     .then((res) => res.json())
@@ -51,7 +55,7 @@ function showHome() {
       <div class='d-flex'>
        <div class='p-2'>
          <p onclick='showPosts(${userId})'>Home</p>
-         <p>Album</p>
+         <p onclick='showAlbum(${userId})'>Album</p>
           <p onclick='showProfile(${userId})'>Profile</p>
          <p onclick='showLogin()'>Logout</p>
        </div>
