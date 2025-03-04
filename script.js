@@ -7,10 +7,21 @@ function showLogin() {
 }
 
 function showPosts(id) {
-  
-  content.innerHTML = id
+  let str = ""
+  //console.log(`https://jsonplaceholder.typicode.com/posts/userId=${id}`)
+  fetch(`https://jsonplaceholder.typicode.com/posts/?userId=${id}`)
+    .then((res) => res.json())
+    .then((data) => {
+      data && data.map((value) => {
+        str += `<div>
+        <b>${value.title}</b>
+        <p>${value.body}</p>
+        </div>`;
+      });
+      content.innerHTML = str;
+    })
+    .catch((err) => console.log(err));
 }
-
 
 function showHome() {
   let userId = selUser.value;
@@ -40,7 +51,7 @@ function showHome() {
    </div>
   `;
   root.innerHTML = str;
-  showPosts(userId)
+  showPosts(userId);
 }
 
 function displayUsers(data) {
