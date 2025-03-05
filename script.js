@@ -95,7 +95,7 @@ function showHome() {
      </div>
      <div class='row'>
       <div class='d-flex'>
-       <div class='p-2'>
+       <div class='p-2 me-5'>
          <p onclick='showPosts(${userId})'>Home</p>
           <p onclick='showMyPost(${userId})'>My Post</p>
          <p onclick='showAlbum(${userId})'>Album</p>
